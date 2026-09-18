@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import PropertyCard from "../components/PropertyCard";
+import homeBanner from "../assets/home-banner-1.jpeg";
 
 function Home() {
   const [properties, setProperties] = useState([]);
@@ -22,11 +23,21 @@ function Home() {
   }
 
   return (
-    <section>
-      <h1>Chez vous, partout et ailleurs</h1>
-      <ul>
+    <section className="home-page" aria-labelledby="home-title">
+      <div className="home-hero">
+        <img
+          src={homeBanner}
+          alt="Paysage côtier"
+          className="home-hero__image"
+        />
+        <h1 id="home-title" className="home-hero__title">
+          Chez vous, partout et ailleurs
+        </h1>
+      </div>
+
+      <ul className="property-gallery">
         {properties.map((property) => (
-          <li key={property.id}>
+          <li key={property.id} className="property-gallery__item">
             <PropertyCard
               id={property.id}
               title={property.title}

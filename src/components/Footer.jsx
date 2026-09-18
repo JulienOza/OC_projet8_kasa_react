@@ -1,8 +1,10 @@
+import kasaLogo from "../assets/kasa-svg-2.svg";
+
 function Footer() {
   return (
-    <footer>
-      <p>Kasa</p>
-      <p>© 2020 Kasa. All rights reserved</p>
+    <footer className="site-footer">
+      <img src={kasaLogo} alt="Kasa" className="site-footer__logo" />
+      <p className="site-footer__copyright">© 2020 Kasa. All rights reserved</p>
     </footer>
   );
 }
