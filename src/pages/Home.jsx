@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PropertyCard from "../components/PropertyCard";
 import homeBanner from "../assets/home-banner-1.jpeg";
+import "./Home.css";
 
 function Home() {
   const [properties, setProperties] = useState([]);

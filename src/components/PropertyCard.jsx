@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./PropertyCard.css";
 
 function PropertyCard({ id, title, cover }) {
   return (

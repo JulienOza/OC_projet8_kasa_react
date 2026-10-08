@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import kasaLogo from "../assets/kasa-svg-2.svg";
+import "./Header.css";
 
 function Header() {
   return (
