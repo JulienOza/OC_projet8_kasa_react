@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import PropertyAccordion from "../components/PropertyAccordion";
+import Accordion from "../components/Accordion";
 import PropertyGallery from "../components/PropertyGallery";
 import PropertyRating from "../components/PropertyRating";
 import NotFound from "./NotFound";
@@ -105,16 +105,16 @@ function PropertyDetails() {
       </div>
 
       <div className="property-details__accordions">
-        <PropertyAccordion title="Description">
+        <Accordion title="Description">
           <p>{property.description}</p>
-        </PropertyAccordion>
-        <PropertyAccordion title="Équipements">
+        </Accordion>
+        <Accordion title="Équipements">
           <ul className="property-details__equipment-list">
             {property.equipments.map((equipment) => (
               <li key={equipment}>{equipment}</li>
             ))}
           </ul>
-        </PropertyAccordion>
+        </Accordion>
       </div>
     </article>
   );

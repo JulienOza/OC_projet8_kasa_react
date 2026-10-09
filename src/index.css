@@ -10,6 +10,10 @@
   color: var(--color-dark);
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 *,
 *::before,
 *::after {

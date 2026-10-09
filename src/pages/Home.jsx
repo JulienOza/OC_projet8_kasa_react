@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import PropertyCard from "../components/PropertyCard";
+import PageBanner from "../components/PageBanner";
 import homeBanner from "../assets/home-banner-1.jpeg";
 import "./Home.css";
 
@@ -25,16 +26,13 @@ function Home() {
 
   return (
     <section className="home-page" aria-labelledby="home-title">
-      <div className="home-hero">
-        <img
-          src={homeBanner}
-          alt="Paysage côtier"
-          className="home-hero__image"
-        />
-        <h1 id="home-title" className="home-hero__title">
-          Chez vous, partout et ailleurs
-        </h1>
-      </div>
+      <PageBanner
+        title="Chez vous, partout et ailleurs"
+        titleId="home-title"
+        image={homeBanner}
+        imageAlt="Paysage côtier"
+        imagePosition="44% 56%"
+      />
 
       <ul className="property-gallery">
         {properties.map((property) => (
