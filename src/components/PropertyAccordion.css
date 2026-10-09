@@ -1,0 +1,122 @@
+.property-accordion {
+  min-width: 0;
+}
+
+.property-accordion__heading {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+.property-accordion__trigger {
+  display: flex;
+  width: 100%;
+  min-height: 30px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 5px;
+  color: var(--color-light);
+  background-color: var(--color-primary);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.property-accordion__trigger:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 3px;
+}
+
+.property-accordion__chevron {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 220ms ease;
+}
+
+.property-accordion__trigger[aria-expanded="true"] .property-accordion__chevron {
+  transform: rotate(225deg) translate(-2px, -1px);
+}
+
+.property-accordion__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  padding: 0 10px;
+  overflow: hidden;
+  border-radius: 0 0 5px 5px;
+  background-color: var(--color-gallery);
+  opacity: 0;
+  transition:
+    grid-template-rows 260ms ease,
+    opacity 200ms ease,
+    padding 260ms ease;
+}
+
+.property-accordion__panel.is-open {
+  grid-template-rows: 1fr;
+  padding-top: 12px;
+  padding-bottom: 16px;
+  opacity: 1;
+}
+
+.property-accordion__content {
+  min-height: 0;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.property-accordion__content > :first-child {
+  margin-top: 0;
+}
+
+.property-accordion__content > :last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .property-accordion__trigger {
+    min-height: 52px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+  }
+
+  .property-accordion__chevron {
+    width: 13px;
+    height: 13px;
+    flex-basis: 13px;
+    border-width: 3px;
+  }
+
+  .property-accordion__panel {
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .property-accordion__panel.is-open {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .property-accordion__content {
+    font-size: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .property-accordion__chevron,
+  .property-accordion__panel {
+    transition-duration: 0.01ms;
+  }
+}

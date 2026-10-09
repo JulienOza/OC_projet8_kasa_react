@@ -1,0 +1,161 @@
+.property-details {
+  width: min(100% - 40px, var(--page-max-width));
+  margin: 27px auto 45px;
+}
+
+.property-details__message {
+  width: min(100% - 40px, var(--page-max-width));
+  margin: 35px auto;
+}
+
+.property-details__summary {
+  margin-top: 20px;
+}
+
+.property-details__heading {
+  min-width: 0;
+}
+
+.property-details__title {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.426;
+}
+
+.property-details__location {
+  margin: 2px 0 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.426;
+}
+
+.property-details__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.property-details__tag {
+  display: flex;
+  min-width: 84px;
+  min-height: 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 12px;
+  border-radius: 10px;
+  color: var(--color-light);
+  background-color: var(--color-primary);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.property-details__host-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.property-details__host {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  order: 1;
+}
+
+.property-details__host-name {
+  max-width: 68px;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.426;
+  text-align: right;
+}
+
+.property-details__host-picture {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.property-details__equipment-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.property-details__accordions {
+  display: grid;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+  .property-details {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .property-details__summary {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .property-details__title {
+    font-size: 36px;
+  }
+
+  .property-details__location {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 18px;
+  }
+
+  .property-details__tags {
+    gap: 10px;
+  }
+
+  .property-details__tag {
+    min-width: 81px;
+    min-height: 18px;
+  }
+
+  .property-details__host-rating {
+    flex: 0 0 200px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+    margin-top: 0;
+  }
+
+  .property-details__host {
+    gap: 10px;
+    order: 0;
+  }
+
+  .property-details__host-name {
+    max-width: 100px;
+    font-size: 18px;
+  }
+
+  .property-details__host-picture {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
+  }
+
+  .property-details__accordions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 54px;
+    margin-top: 17px;
+  }
+}

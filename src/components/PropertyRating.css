@@ -1,0 +1,21 @@
+.property-rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  order: 0;
+  color: #e3e3e3;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.property-rating__star.is-active {
+  color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .property-rating {
+    gap: 10px;
+    font-size: 24px;
+    order: 1;
+  }
+}
