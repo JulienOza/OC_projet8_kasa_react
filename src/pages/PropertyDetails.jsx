@@ -8,21 +8,14 @@ import "./PropertyDetails.css";
 
 function PropertyDetails() {
   const { id } = useParams();
-  const [result, setResult] = useState({
-    id: null,
-    property: null,
-    status: "loading",
-  });
+  const [property, setProperty] = useState(null);
+  const [status, setStatus] = useState("loading");
 
   useEffect(() => {
-    const controller = new AbortController();
-
-    fetch(`http://localhost:8080/api/properties/${id}`, {
-      signal: controller.signal,
-    })
+    fetch(`http://localhost:8080/api/properties/${id}`)
       .then((response) => {
         if (response.status === 404) {
-          setResult({ id, property: null, status: "not-found" });
+          setStatus("not-found");
           return null;
         }
         if (!response.ok) {
@@ -32,21 +25,13 @@ function PropertyDetails() {
       })
       .then((data) => {
         if (data) {
-          setResult({ id, property: data, status: "success" });
+          setProperty(data);
         }
       })
-      .catch((error) => {
-        if (error.name !== "AbortError") {
-          setResult({ id, property: null, status: "error" });
-        }
+      .catch(() => {
+        setStatus("error");
       });
-
-    return () => controller.abort();
   }, [id]);
-
-  const isCurrentResult = result.id === id;
-  const status = isCurrentResult ? result.status : "loading";
-  const property = isCurrentResult ? result.property : null;
 
   if (status === "not-found") {
     return <NotFound />;
@@ -72,7 +57,6 @@ function PropertyDetails() {
     <article className="property-details">
       <PropertyGallery
         pictures={property.pictures}
-        cover={property.cover}
         title={property.title}
       />
 

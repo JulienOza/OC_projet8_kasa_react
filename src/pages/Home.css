@@ -3,6 +3,10 @@
   margin: 27px auto 22px;
 }
 
+.home-page__message {
+  margin: 35px 0;
+}
+
 .property-gallery {
   display: grid;
   gap: 20px;

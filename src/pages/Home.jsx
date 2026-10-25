@@ -20,10 +20,6 @@ function Home() {
       .catch(() => setError(true));
   }, []);
 
-  if (error) {
-    return <p>Impossible de charger les logements.</p>;
-  }
-
   return (
     <section className="home-page" aria-labelledby="home-title">
       <PageBanner
@@ -34,17 +30,23 @@ function Home() {
         imagePosition="44% 56%"
       />
 
-      <ul className="property-gallery">
-        {properties.map((property) => (
-          <li key={property.id} className="property-gallery__item">
-            <PropertyCard
-              id={property.id}
-              title={property.title}
-              cover={property.cover}
-            />
-          </li>
-        ))}
-      </ul>
+      {error ? (
+        <p className="home-page__message" role="alert">
+          Impossible de charger les logements.
+        </p>
+      ) : (
+        <ul className="property-gallery">
+          {properties.map((property) => (
+            <li key={property.id} className="property-gallery__item">
+              <PropertyCard
+                id={property.id}
+                title={property.title}
+                cover={property.cover}
+              />
+            </li>
+          ))}
+        </ul>
+      )}
     </section>
   );
 }
